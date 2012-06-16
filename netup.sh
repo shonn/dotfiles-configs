@@ -1,5 +1,6 @@
 #!/bin/bash
 #Script to bring up network (wireless interface)
+#Author: Shawn Nguyen
 
 echo "Which network would you like to connect to?"
 networks=$(cat /etc/conf.d/netcfg | grep 'NETWORKS=')
