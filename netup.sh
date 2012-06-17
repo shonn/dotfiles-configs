@@ -16,6 +16,10 @@ for i in "${network_array[@]}"; do
 done
 
 read -p "Please enter the network #: " networknum
+if [ $networknum -lt 1 ] || [ $networknum -gt ${#network_array[@]} ]; then
+	echo "Invalid number."
+	exit 1
+fi 
 
 sudo ip link set wlan0 up
 sudo netcfg "${network_array[networknum-1]}" -u 
