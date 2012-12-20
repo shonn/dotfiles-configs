@@ -1,5 +1,4 @@
 #!/bin/bash
-#Script to bring up network (wireless interface)
 #Author: Shawn Nguyen
 #quick and dirty script to connect to a network in ArchLinux
 
