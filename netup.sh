@@ -1,6 +1,7 @@
 #!/bin/bash
 #Script to bring up network (wireless interface)
 #Author: Shawn Nguyen
+#quick and dirty script to connect to a network in ArchLinux
 
 echo "Which network would you like to connect to?"
 networks=$(cat /etc/conf.d/netcfg | grep 'NETWORKS=')
