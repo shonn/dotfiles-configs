@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-#unset color_prompt force_color_prompt
+unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -84,9 +84,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-set -o vi
+#set -o vi
 #PS1='\u at \w $ '
-PS1='\e[1;91m\]\u \e[0;97m\]at \[\e[0;96m\]\w\[\e[0;37m\]\] $ '
+PS1='\[\e[1;91m\]\u \[\e[0;97m\]at \[\e[0;96m\]\w\[\e[0;37m\] $ '
 
 #ls into every cd call
 cd () 
