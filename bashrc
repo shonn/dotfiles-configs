@@ -41,24 +41,6 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-unset color_prompt force_color_prompt
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -84,33 +66,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#set -o vi
+set -o vi
 #PS1='\u at \w $ '
-PS1='\[\e[1;91m\]\u \[\e[0;97m\]at \[\e[0;96m\]\w\[\e[0;37m\] $ '
+PS1='\[\e[1;91m\]\u \[\e[0;97m\]at \[\e[0;92m\]\w\[\e[0;29m\] $ '
 
 #ls into every cd call
-cd () 
-{ 
+cd () {
     builtin cd "$*";
-    if [ $? -ne 0 ]; then
-        if [ ! -x "$1" ] && [ -d "$1" ]; then
-            echo -n "Cannot access dir, become root? ";
-            read foo;
-            if [[ $foo = "y" ]] || [[ $foo = "Y" ]]; then
-                sudo bash;
-                return;
-            else
-                builtin cd "$*";
-                return;
-            fi;
-        fi;
-    else
-        echo;
-        ls --color=auto --color=auto;
-    fi
+    ls --color=auto --color=auto;
 }
+
 #Climb up directory by specifying number of 'up' 
 up() { [ $(( $1 + 0 )) -gt 0 ] && cd $(eval "printf '../'%.0s {1..$1}"); }
+#up() { for i in 'seq 1 $1'; do cd ../ && pwd; done }
 # Extract Files
 extract() {
  if [ -f $1 ] ; then
