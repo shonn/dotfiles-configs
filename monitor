@@ -1,0 +1,15 @@
+#!/bin/sh
+sleepTime=60
+pattern="chromium"
+x=0
+procId=$(ps -eo pid,pcpu,time,args | grep $pattern |grep –v grep | awk ‘{print $1}’);
+echo "procId="$procId
+while [$x -ge 0]
+do
+  date=$(date)
+  ps0=$(ps -o vsz,rss,pcpu -p $procId)
+  x=$((x+1))
+  echo $x $date $ps0 | awk ‘{print $1, $3, $4, $5, $8,\
+  $11/1000.0, $9, $12/1000.0, $10, $13, $14}’
+  sleep $sleepTime
+done
