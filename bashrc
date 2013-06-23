@@ -67,8 +67,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 set -o vi
-#PS1='\u at \w $ '
-PS1='\[\e[1;91m\]\u \[\e[0;97m\]at \[\e[0;92m\]\w\[\e[0;29m\] $ '
+PS1='\[\e[1;91m\]\u \[\e[0;92m\]at \[\e[0;89m\]\w\[\e[0;26m\] $ '
 
 #ls into every cd call
 cd () {
@@ -104,3 +103,5 @@ extract() {
  fi
 }
 
+export EC2_HOME=~/.ec2
+export EC2_PRIVATE_KEY=pk-YOURKEYNAME.pem
