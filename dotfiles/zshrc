@@ -44,8 +44,9 @@ plugins=(git colored-man)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$PATH:/home/ssn/.rvm/gems/ruby-2.0.0-p247/bin:/home/ssn/.rvm/gems/ruby-2.0.0-p247@global/bin:/home/ssn/.rvm/rubies/ruby-2.0.0-p247/bin:/home/ssn/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl
+export PLAY_HOME=/opt/play-2.2.1
+export GRAILS_HOME=/opt/grails-2.2.3
+export PATH=$PATH:/home/ssn/.rvm/gems/ruby-2.0.0-p247/bin:/home/ssn/.rvm/gems/ruby-2.0.0-p247@global/bin:/home/ssn/.rvm/rubies/ruby-2.0.0-p247/bin:/home/ssn/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:$GRAILS_HOME/bin:$PLAY_HOME
 
 # disable touchpad
 synclient TouchpadOff=1
@@ -70,4 +71,4 @@ function pygmentize_cat {
     pygmentize -g "${arg}" 2> /dev/null || /bin/cat "${arg}"
   done
 }
-command -v pygmentize > /dev/null && alias cat=pygmentize_cat
+command -v pygmentize > /dev/null && alias pcat=pygmentize_cat
