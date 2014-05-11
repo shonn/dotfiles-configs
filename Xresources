@@ -1,21 +1,31 @@
 urxvt*loginShell: true
+URxvt.perl-lib: /home/ssn/lib64/urxvt/perl
+urxvt.iso14755: false
+urxvt.iso14755_52: false
+
 !urxvt.background:  #000000
 !urxvt.foreground:  #fefefe
-urxvt.font: xft:inconsolata
+urxvt.font: xft:inconsolata:size=10
 
 !Extensions
+urxvt.scrollBar: false
 urxvt.perl-lib:        /usr/lib/urxvt/perl/
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-urxvt.perl-ext-common: default,clipboard
+urxvt.perl-ext-common: default,font-size,clipboard
 urxvt.urlLauncher:     /usr/bin/firefox
 urxvt.matcher.button:  1
+
+urxvt.keysym.Control-Up:     perl:font-size:increase
+urxvt.keysym.Control-Down:   perl:font-size:decrease
+urxvt.keysym.Control-S-Up:   perl:font-size:incglobal
+urxvt.keysym.Control-S-Down: perl:font-size:decglobal
 
 ! vim: set filetype=xdefaults :
 ! gjm scheme
 ! *background: rgba:0000/0000/0000/dddd
 
- *cursorColor:   #cee318
+ *cursorColor:   #f3f3f3
 
  urxvt.background:    #1C1C1C
  urxvt.foreground:    #c5c5c5
@@ -53,3 +63,4 @@ urxvt.matcher.button:  1
  *color15:       #f3f3f3
 
 
+xscreensaver.timeout: 1:00:00

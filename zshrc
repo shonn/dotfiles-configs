@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME="frisk"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -72,3 +72,14 @@ function pygmentize_cat {
   done
 }
 command -v pygmentize > /dev/null && alias pcat=pygmentize_cat
+
+function spectrum_ls() {          
+  for code in {000..255}; do
+    print -P -- "$code: %F{$code}$ZSH_SPECTRUM_TEXT%f"
+      done
+}
+
+#reverse search
+bindkey "^R" history-incremental-search-backward
+feh --bg-scale /home/ssn/Objects/mountain.png
+xset -dpms; xset s off
