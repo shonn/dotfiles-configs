@@ -1,0 +1,37 @@
+background no
+out_to_console yes
+out_to_x no
+update_interval 2
+total_run_times 0
+short_units yes
+#pad_percents 0
+use_spacer yes
+
+override_utf8_locale yes
+
+TEXT
+,[
+#Shows time
+{"full_text": " ${time %a %b %d} ${time %I:%M:%S %p} ", "color":"\#2FDC57"},
+
+#Shows current CPU usage with a bar
+{"full_text": " CPU [$cpubar] ", "color":"\#FF0000"},
+
+#Shows current RAM usage with a bar
+{"full_text": " RAM [$membar] ", "color":"\#AFB500"},
+
+#Shows battery info
+{"full_text": " BAT [$battery_percent%] ${battery_time}", "color":"\#9933CC"},
+
+#Prints WiFi connection if interface is up
+${if_up wlp3s0}
+{"full_text": " W: ${wireless_essid wlp3s0} ", "color":"\#00A9B5"},
+${endif}
+
+#Finds current volume
+{"full_text": " VOL ${exec amixer get Master | grep -o "\[.*%\]"} ", "color":"\#268BD2"},
+
+#Temperature
+{"full_text": " ${acpitemp}C"}
+
+]
