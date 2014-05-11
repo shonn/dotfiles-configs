@@ -27,40 +27,40 @@ urxvt.keysym.Control-S-Down: perl:font-size:decglobal
 
  *cursorColor:   #f3f3f3
 
- urxvt.background:    #1C1C1C
- urxvt.foreground:    #c5c5c5
-
-! black
- *color0:        #1C1C1C
- *color8:        #666666
-
-! red
- *color1:        #ff005b
- *color9:        #ff00a0
-
-! green
- *color2:        #cee318
- *color10:       #ccff00
-
-! yellow
- *color3:        #ffe755
- *color11:       #ff9f00
-
-! blue
- *color4:        #048ac7
- *color12:       #48c6ff
-
-! magenta
- *color5:        #833c9f
- *color13:       #be67e1
-
-! cyan 
- *color6:        #0ac1cd
- *color14:       #63e7f0
-
-! white
- *color7:        #e5e5e5
- *color15:       #f3f3f3
-
+URxvt.background: [85]#171717
+URxvt.foreground: #d4d4d4
+URxvt.depth: 32 
 
 xscreensaver.timeout: 1:00:00
+
+! black
+*color0:  #717370
+*color8:  #717370
+
+! red
+*color1:  #f68dd0
+*color9:  #f68dd0
+
+! green
+*color2:  #89db52
+*color10: #89db52
+
+! yellow
+*color3:  #a1fdaa
+*color11: #a1fdaa
+
+! blue
+*color4:  #99b7f5
+*color12: #99b7f5
+
+! magenta
+*color5:  #b897f2
+*color13: #b897f2
+
+! cyan
+*color6:  #7fddf9
+*color14: #7fddf9
+
+! white
+*color7:  #d0d0d0
+*color15: #d0d0d0
